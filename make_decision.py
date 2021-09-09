@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Author: Evan Jones.
-
-Created on Fri Aug 20 08:43:30 2021
-
-"""
 import sys
 import pandas as pd
 from itertools import combinations
@@ -49,7 +43,7 @@ def match_iterator(projects):
     shuffle(combos)
     return iter(combos)
 
-
+# Create an application class with tkinter than will have all the buttons and update the decisions
 class RoundRobinApp():
     def __init__(self, projects):
         master = tkinter.Tk()
@@ -119,6 +113,7 @@ def main():
     # Run the app
     RoundRobinApp(decision_list)
 
+    # Create a results table
     results = pd.DataFrame([{"name": decision.name,
                              "wins": decision.win_counter,
                              "draws": decision.draw_counter,
